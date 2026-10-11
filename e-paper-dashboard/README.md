@@ -4,6 +4,8 @@
 
 **Project Repository**: [izBoard](https://github.com/izdev-digital/e-paper-dashboard)
 
+The add-on image (`izdevdigital/izboard-addon`) is built and published by the izBoard project repository.
+
 ## Configuration
 
 Set `CLIENT_URL` to the LAN URL that your E-Paper displays can reach. The default is
@@ -13,6 +15,23 @@ Set `CLIENT_URL` to the LAN URL that your E-Paper displays can reach. The defaul
 Do not use the Home Assistant ingress or cloud URL: those routes require a browser session and
 are not reachable by the displays. Allow the display network to reach this URL through your
 firewall.
+
+## Data sources
+
+Open **Connections** in izBoard to add Home Assistant and Google Calendar / Tasks accounts.
+Connections are shared by everyone using the add-on.
+
+- **Widget data**: the add-on's own Home Assistant instance is available automatically as
+  **Dashboard Home Assistant** in the source picker; no token is needed.
+- **Home Assistant dashboard screenshots**: these need a named Home Assistant connection with a
+  long-lived access token (paste one from your Home Assistant profile, or use **Sign in**). The
+  add-on cannot create this token itself. The connection's server URL must be reachable from both
+  your browser and the add-on; `homeassistant.local` often does not resolve inside add-on
+  containers, so prefer the IP address.
+- **Google Calendar / Tasks**: requires your own Google OAuth client and Home Assistant opened over
+  HTTPS. The redirect URI shown on the Connections page includes the ingress path; update it in
+  Google Cloud if you reinstall the add-on. See the
+  [provider setup guide](https://github.com/izdev-digital/e-paper-dashboard/blob/master/software/docs/data-provider-plugins.md).
 
 ## Support
 
@@ -27,4 +46,7 @@ Currently supported architectures:
 - `amd64`
 - `arm64`
 
-**Note**: This add-on uses Playwright and Chromium to render dashboards, which requires sufficient RAM and CPU resources. It may not run reliably on low-powered devices with limited resources.
+**Note**: Home Assistant dashboard screenshots use an optional rendering component (Playwright and
+Chromium). It is downloaded from the izBoard GitHub releases on first use, so the add-on needs
+internet access, and it requires sufficient RAM and CPU; it may not run reliably on low-powered
+devices. Custom layout dashboards do not need it.
