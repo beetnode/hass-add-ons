@@ -2,7 +2,7 @@
 
 **izBoard** displays your Home Assistant dashboards on battery-powered E-Paper devices. Your device automatically fetches updated dashboard images from this add-on on a schedule you control. The add-on converts your Home Assistant dashboards into the right format for E-Paper displays. Because the device only uses power during updates, a single battery charge can last weeks or even months.
 
-**Project Repository**: [izBoard](https://github.com/izdev-digital/e-paper-dashboard)
+**Project Repository**: [izBoard](https://github.com/beetnode/izBoard)
 
 The add-on image (`izdevdigital/izboard-addon`) is built and published by the izBoard project repository.
 
@@ -31,14 +31,14 @@ Connections are shared by everyone using the add-on.
 - **Google Calendar / Tasks**: requires your own Google OAuth client and Home Assistant opened over
   HTTPS. The redirect URI shown on the Connections page includes the ingress path; update it in
   Google Cloud if you reinstall the add-on. See the
-  [provider setup guide](https://github.com/izdev-digital/e-paper-dashboard/blob/master/software/docs/data-provider-plugins.md).
+  [provider setup guide](https://github.com/beetnode/izBoard/blob/master/software/docs/data-provider-plugins.md).
 
 ## Support
 
 For issues, feature requests, or questions:
-- [Report an issue](https://github.com/izdev-digital/hass-add-ons/issues)
-- [View add-on repository](https://github.com/izdev-digital/hass-add-ons)
-- [View izBoard project](https://github.com/izdev-digital/e-paper-dashboard)
+- [Report an issue](https://github.com/beetnode/hass-add-ons/issues)
+- [View add-on repository](https://github.com/beetnode/hass-add-ons)
+- [View izBoard project](https://github.com/beetnode/izBoard)
 
 ## Supported Architectures
 

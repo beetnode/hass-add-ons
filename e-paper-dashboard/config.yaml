@@ -1,9 +1,9 @@
 name: "izBoard"
-version: "0.4.1"
+version: "0.5.0"
 slug: "izboard"
 description: "izBoard E-Paper Dashboard for Home Assistant"
-url: "https://github.com/izdev-digital/hass-add-ons"
-# Prebuilt in https://github.com/izdev-digital/e-paper-dashboard; tag must match version
+url: "https://github.com/beetnode/hass-add-ons"
+# Prebuilt in https://github.com/beetnode/izBoard; tag must match version
 image: "izdevdigital/izboard-addon"
 arch:
   - amd64
