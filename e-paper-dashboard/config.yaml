@@ -16,6 +16,9 @@ watchdog: "tcp://[HOST]:[PORT:8128]"
 ingress_entry: /
 panel_icon: mdi:tablet-dashboard
 panel_title: izBoard
+# Every ingress user is signed into izBoard as its shared superuser, so keep the
+# panel admin-only. This is the Supervisor default; set explicitly to pin intent.
+panel_admin: true
 map:
   - data:rw
 tmpfs: true
