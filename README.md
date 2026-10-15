@@ -10,7 +10,7 @@ A dashboard interface (izBoard) providing a clean and energy-efficient way to vi
 
 - **Version**: 0.5.0
 - **Architecture**: amd64, aarch64
-- [Documentation](e-paper-dashboard/README.md)
+- [Documentation](izboard/README.md)
 
 ## Support
 
