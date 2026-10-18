@@ -8,13 +8,23 @@ The add-on image (`izdevdigital/izboard-addon`) is built and published by the iz
 
 ## Configuration
 
-Set `CLIENT_URL` to the LAN URL that your E-Paper displays can reach. The default is
-`http://homeassistant.local:8129`. Change the host or port if your network does not resolve
-`homeassistant.local`, the add-on port is remapped, or the displays use a separate VLAN.
+Set `CLIENT_URL` to a LAN address of Home Assistant that your E-Paper displays can reach. The
+default is `http://homeassistant.local:8128`. Only its host is used: displays connect to that host
+over TLS on the device port `8129`, and izBoard shows the address to enter when pairing. Change the
+host if your network does not resolve `homeassistant.local` or the displays use a separate VLAN.
+
+Keep the device port mapped to `8129` on the host. The pairing screen always shows `8129`, so a
+remapped port gives displays the wrong address.
 
 Do not use the Home Assistant ingress or cloud URL: those routes require a browser session and
-are not reachable by the displays. Allow the display network to reach this URL through your
+are not reachable by the displays. Allow the display network to reach port `8129` through your
 firewall.
+
+### Upgrading to 0.8.0
+
+The device port now accepts TLS only. Displays paired with earlier firmware must be updated and
+paired again. The device certificate is stored in the add-on's `/data`; include it in backups so
+paired displays keep trusting the add-on after a restore.
 
 ## Data sources
 
@@ -44,9 +54,9 @@ For issues, feature requests, or questions:
 
 Currently supported architectures:
 - `amd64`
-- `arm64`
+- `aarch64`
 
 **Note**: Home Assistant dashboard screenshots use an optional rendering component (Playwright and
-Chromium). It is downloaded from the izBoard GitHub releases on first use, so the add-on needs
-internet access, and it requires sufficient RAM and CPU; it may not run reliably on low-powered
-devices. Custom layout dashboards do not need it.
+Chromium). It is pulled from the `izdevdigital/izboard-rendering` image on Docker Hub on first use,
+so the add-on needs internet access, and it requires sufficient RAM and CPU; it may not run
+reliably on low-powered devices. Custom layout dashboards do not need it.
