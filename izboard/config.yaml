@@ -1,5 +1,5 @@
 name: "izBoard"
-version: "0.8.0"
+version: "0.8.1"
 slug: "izboard"
 description: "izBoard E-Paper Dashboard for Home Assistant"
 url: "https://github.com/beetnode/hass-add-ons"

@@ -8,7 +8,7 @@ This repository contains custom Home Assistant add-ons.
 
 A dashboard interface (izBoard) providing a clean and energy-efficient way to visualize your Home Assistant data.
 
-- **Version**: 0.8.0
+- **Version**: 0.8.1
 - **Architecture**: amd64, aarch64
 - [Documentation](izboard/README.md)
 
